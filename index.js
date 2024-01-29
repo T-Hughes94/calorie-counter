@@ -47,4 +47,8 @@ function cleanInputString(str) {
       }
       return calories
   }
+
+  function calculateCalories(e){
+  
+  }
   
