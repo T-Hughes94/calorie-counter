@@ -51,10 +51,26 @@ function cleanInputString(str) {
   function calculateCalories(e){
     e.preventDefault();
     isError = false;
+    //creating variables that grab the input of these fields
     const breakfastNumberInputs = document.querySelectorAll("#breakfast input[type=number]");
     const lunchNumberInputs = document.querySelectorAll('#lunch input[type=number]');
     const dinnerNumberInputs = document.querySelectorAll('#dinner input[type=number]');
     const snacksNumberInputs = document.querySelectorAll('#snacks input[type=number]');
     const exerciseNumberInputs = document.querySelectorAll('#exercise input[type=number]');
+    //assigning the number of calories from each input
+    const breakfastCalories = getCaloriesFromInputs(breakfastNumberInputs);
+    const lunchCalories = getCaloriesFromInputs(lunchNumberInputs);
+    const dinnerCalories = getCaloriesFromInputs(dinnerNumberInputs);
+    const snacksCalories = getCaloriesFromInputs(snacksNumberInputs);
+    const exerciseCalories = getCaloriesFromInputs(exerciseNumberInputs);
+    //creating an array for numbers in budgetNumberInput
+    const budgetCalories = getCaloriesFromInputs([budgetNumberInput])
+
+    if (isError) {
+        return;
+      }
+      const consumedCalories = breakfastCalories + lunchCalories + dinnerCalories + snacksCalories;
+      const remainingCalories = budgetCalories - consumedCalories + exerciseCalories;
+      const surplusOrDeficit = remainingCalories >=0 ? 'Surplus' : 'Deficit';
   }
   
