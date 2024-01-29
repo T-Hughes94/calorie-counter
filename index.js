@@ -32,4 +32,7 @@ function cleanInputString(str) {
     targetInputContainer.insertAdjacentHTML('beforeend', HTMLString);
   };
 
+  function getCaloriesFromInputs(list){
+  
+  }
   
