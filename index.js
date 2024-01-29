@@ -31,7 +31,7 @@ function addEntry() {
   />`;
   targetInputContainer.insertAdjacentHTML('beforeend', HTMLString);
 }
-
+  
 function calculateCalories(e) {
     e.preventDefault();
     isError = false;
@@ -55,7 +55,9 @@ function calculateCalories(e) {
   
     const consumedCalories = breakfastCalories + lunchCalories + dinnerCalories + snacksCalories;
     const remainingCalories = budgetCalories - consumedCalories + exerciseCalories;
-    const surplusOrDeficit = remainingCalories >=0 ? 'Surplus' : 'Deficit';
+    const surplusOrDeficit = remainingCalories >= 0 ? 'Surplus' : 'Deficit';
+  
+    output.innerHTML = ``
   
   }
 
@@ -77,4 +79,3 @@ function calculateCalories(e) {
   }
   
   addEntryButton.addEventListener("click", addEntry);
-  
